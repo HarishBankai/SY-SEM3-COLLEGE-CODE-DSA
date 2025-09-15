@@ -58,10 +58,10 @@ void insert_inbetween()
     newnode=(node*)malloc(sizeof(node));                //allocation memory for newnode
     printf("enter new data");
     scanf("%d",&newnode->data);
-
+    newnode->next = NULL;                                //newnode next is null as it will be the last node
+                                          
     //we have created a newnode and now we are going to link it to the location
 
-    newnode->next = NULL;                                //newnode next is null as it will be the last node
     p=head;                                              //start traversing from head
     while(i=0;i<loc-2;i++)                               //traversing to the node before the location
     {
