@@ -9,6 +9,7 @@ void delete_beg()
     node* q;                                        //temporary node to store the address of head
     q=head;                                         //storing head address in q
     printf("deleted element is %d",q->data);        //printing the data of the node to be deleted
+    
     head=head->next;                                //updating head to next node  
     free(q);                                        //freeing the memory of the deleted node
 }   
