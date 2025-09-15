@@ -43,7 +43,7 @@ void insert_end()
 
 //Insert at any position in the linked list
 
-void insert_inbet()
+void insert_inbetween()
 {
     node*newnode, *p;                                   //allocation memory for newnode
 
