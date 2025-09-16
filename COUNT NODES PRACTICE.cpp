@@ -19,3 +19,4 @@ int count_nodes(node* head)
     }
     return count;                //return the count
 }
+
