@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define SIZE 100                                                      // Define a constant for stack size
+
+typedef struct {                                                      // Define a structure for Stack
+int items[SIZE];
+int top;
+} stack;
+
+void chqstack(stack *s) {                                            // Initialize the stack by setting its top to -1
+s->top = -1;
+}
+
+void push(stack *s, int value) {                                    // Push an element onto the stack if it's not full
+if (s->top == SIZE - 1)                                             // Full condition
+printf("Stack is full\n");
+else 
+{
+s->items[++s->top] = value;
+}
+}
+
+int pop(stack *s) {                                                 // Pop an element from the stack if it's not empty and return its value, otherwise print error message and return -1
+if (s->top == -1)                                                   // Empty condition
+{   
+printf("Stack is empty, can't pop any valid data\n");
+return -1;   
+} 
+else 
+{
+return s->items[s->top--];
+}
+}
+
+void displaystack(stack *s) {                                       // Display all elements currently in the stack
+printf("Stack:\n");
+for (int i = 0; i <= s->top; i++) 
+{
+printf("%d\n", s->items[i]);
+}
+}
+
+int main() {                                                        // Main function where our program starts
+stack s;                                                            // Create a stack named 's'
+chqstack(&s);                                                       // Initialize the stack
+push(&s, 30);                                                       // Push numbers 30 and 90 onto the stack
+push(&s, 90);
+pop(&s);                                                            // Pop an element from the top of the stack (should be 90)
+displaystack(&s);                                                   // Display current elements in the stack
+return 0;                                                           // End program successfully
+}  
