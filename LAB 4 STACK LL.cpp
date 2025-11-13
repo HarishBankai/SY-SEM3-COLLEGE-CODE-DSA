@@ -50,8 +50,10 @@ void push() {
         printf("Memory allocation failed!\n");
         return;
     }
+    
     printf("enter new element : ");
     scanf("%d", &newnode->data);
+    
     newnode->next = NULL;
     if (top == NULL) {
         top = newnode;
@@ -69,6 +71,7 @@ void pop() {
     } else {
         temp = top;
         printf("removed element from the stack : %d", temp->data);
+        
         top = top->next;
         free(temp);
     }
@@ -88,3 +91,4 @@ void display() {
     }
     printf("\n");
 }
+
